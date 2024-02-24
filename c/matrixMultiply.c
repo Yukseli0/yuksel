@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+int sumMatrix(int matrix1[][3], int matrix2[][3])
+{
+    int summary[3][3];
+    for(int i =0; i<3; i++)
+    {
+        for(int j =0; j<3; j++)
+        {
+            summary[i][j]=matrix1[i][j]+matrix2[i][j];
+        }
+    }
+}
 
 int multiply_matrix(int matrix1[][3], int matrix2[][3])
 {
@@ -50,5 +60,15 @@ int main()
         }
     }
     printf("\n");
-    multiply_matrix(matrix1,matrix2);
+    printf("select the operation you are willing to apply (1:multiply 2:summary) \n");
+    int islem;
+    scanf("%d", &islem);
+    switch(islem)
+    {
+    case 1:
+        multiply_matrix(matrix1,matrix2);
+        break;
+    case 2:
+        sumMatrix(matrix1, matrix2);
+    }
 }
